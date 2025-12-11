@@ -1,0 +1,24 @@
+<h1>{{ correos[1].titol }}</h1>
+
+<p>De: {{ correu.emisor }}</p>
+<p>A: {{ correu.destinatario }}</p>
+<p>{{ correu.cos }}</p>
+<p>Longitud del título: {{ numeros }}</p>
+
+<p>Correos leídos: {{ leidos }}</p>
+<p>Correos no leídos: {{ noleidos }}</p>
+
+<table>
+  @for (correo of correos; track correo) {
+    <tr>
+      @if (!correo.leido) {
+        <td>{{ correo.emisor }}</td>
+        <td>{{ correo.destinatario }}</td>
+      }
+    </tr>
+  }
+</table>
+<button (click)="aumentarletres()">Aumentar letras</button>
+
+<p>Numero de letras del titulo {{ numeros2 }}</p>
+
